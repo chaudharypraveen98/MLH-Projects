@@ -2,7 +2,7 @@ import sendgrid
 import os
 from sendgrid.helpers.mail import Mail, Email, To, Content
 
-sg = sendgrid.SendGridAPIClient(api_key='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')
+sg = sendgrid.SendGridAPIClient(api_key='')
 from_email = Email("chaudharypraveen98@gmail.com")  # Change to your verified sender
 to_email = To("devilunknown1509@gmail.com")  # Change to your recipient
 subject = "Sending with SendGrid is Fun"
