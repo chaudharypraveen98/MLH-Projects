@@ -1,0 +1,27 @@
+body{
+  background-image: radial-gradient(circle at center center, rgba(56, 69, 253,0.15) 0%, rgba(56, 69, 253,0.15) 84%,transparent 84%, transparent 100%),linear-gradient(90deg, hsl(195,97%,72%),hsl(195,97%,72%)); background-size: 26px 26px;
+}
+.banner{
+  text-align: center;
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.linkedin-btn{
+  padding: 10px 15px;
+  border-radius: 25px;
+  margin: 10px 0;
+  outline: none;
+  background-color: rgba(255,255,255,0.7);
+}
+.pattern{
+  background-image: radial-gradient(circle at center center, rgb(15, 177, 180) 0%, rgb(15, 177, 180) 3%,rgb(12, 106, 121) 3%, rgb(12, 106, 121) 11%,rgb(9, 34, 61) 11%, rgb(9, 34, 61) 100%); background-size: 73px 73px;
+}
+.white{
+  color: white!important;
+}
+.navbar-toggler{
+  background-color: rgba(255,255,255,0.1) !important;
+}
