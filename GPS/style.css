@@ -1,0 +1,61 @@
+#btn1{
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:500px;
+    width:100%;
+}
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:500px;
+    width:100%;
+}
+#map {
+    width: 100%;
+    height: 400px;
+}
+#map-layer {
+    margin: 20px 0;
+    max-width: 600px;
+    min-height: 400px!important;
+    height: 400px!important;
+}
+#btnAction {
+    background: #3878c7;
+    padding: 10px 40px;
+    border: #3672bb 1px solid;
+    border-radius: 2px;
+    color: #FFF;
+    font-size: 0.9em;
+    cursor:pointer;
+    text-align: center!important;
+}
+#btnAction:disabled {
+    background: #6c99d2;
+}
+.head>h1{
+    text-align: center;
+    color: white;
+}
+body{
+    background-image: linear-gradient(45deg, rgb(242, 1, 146) 0%, rgb(242, 1, 146) 14.286%,rgb(205, 4, 143) 14.286%, rgb(205, 4, 143) 28.572%,rgb(168, 6, 140) 28.572%, rgb(168, 6, 140) 42.858%,rgb(132, 9, 137) 42.858%, rgb(132, 9, 137) 57.144%,rgb(95, 12, 134) 57.144%, rgb(95, 12, 134) 71.43%,rgb(58, 14, 131) 71.43%, rgb(58, 14, 131) 85.716%,rgb(21, 17, 128) 85.716%, rgb(21, 17, 128) 100.002%);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.map-container{
+    text-align: center;
+}
+.map-container select{
+    padding: 10px 15px;
+    outline: none;
+    background-color: rgba(255,255,255,0.7);
+    border: none;
+    border-radius: 25px;
+    margin: 10px 0px;
+}

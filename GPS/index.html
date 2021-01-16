@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="head">
+    <h1>GPS using Google Map API</h1>
+</div>
+<div class="map-container">
+    <div id="button-layer">
+        <button id="btnAction"  class="btn btn-primary" onClick="locate()">Click to see slots</button>
+    </div>
+    <select id="end">
+        <option value="28.445323,77.315779">Pristine Mall, sector 31</option>
+        <option value="28.444657,77.319635">Community Center, Sector 31</option>
+        <option value="28.448644,77.308221">Metro Parking</option>
+    </select>
+    <div id="map"></div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=ENTER_YOUR_OWN_API
+        &callback=initMap" async defer>
+</script>
+<script src="plugins.js"></script>
+</body>
+</html>
