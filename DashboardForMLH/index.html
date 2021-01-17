@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.7.4/dist/progressbar.js"></script>
+</head>
+<body>
+
+<div id="head">MLH Scoreboard</div>
+<div id="container">
+    <div id="content">
+        <div id="titleBar">
+            <h2>Dashboard</h2>
+            <div id="profilePic">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/153917/profile/profile-512.jpg"/>
+            </div>
+            <span class="controls activeControl">Weekly</span>
+            <span class="controls">Monthly</span>
+        </div>
+
+        <div class="mainChart">
+            <canvas id="salesData"></canvas>
+            <h2>Total Sales</h2>
+
+            <div class="clearFix"></div>
+
+            <div id="totalSales">
+                <div class="col">
+                    <div id="participantCount" class="progressBar"></div>
+                    <h3>3100+</h3>
+                    <span class="progressTitle">Total Participants</span>
+                </div>
+                <div class="col">
+                    <div id="totalPointCount" class="progressBar"></div>
+                    <h3>52535</h3>
+                    <span class="progressTitle">Total Points Earned</span>
+                </div>
+                <div class="col">
+                    <div id="totalEventCount" class="progressBar"></div>
+                    <h3>150+</h3>
+                    <span class="progressTitle">Event Count</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<script>
+    var salesData = {
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        datasets: [
+            {
+                label: "Front",
+                fillColor: "rgba(195, 40, 96, 0.1)",
+                strokeColor: "rgba(195, 40, 96, 1)",
+                pointColor: "rgba(195, 40, 96, 1)",
+                pointStrokeColor: "#202b33",
+                pointHighlightStroke: "rgba(225,225,225,0.9)",
+                data: [0, 22, 45, 51, 81, 110, 151]
+            },
+            {
+                label: "Middle",
+                fillColor: "rgba(255, 172, 100, 0.1)",
+                strokeColor: "rgba(255, 172, 100, 1)",
+                pointColor: "rgba(255, 172, 100, 1)",
+                pointStrokeColor: "#202b33",
+                pointHighlightStroke: "rgba(225,225,225,0.9)",
+                data: [5, 25, 48, 65, 76, 110, 143]
+            },
+        ]
+    };
+    var ctx = document.getElementById("salesData").getContext("2d");
+    window.myLineChart = new Chart(ctx).Line(salesData, {
+        pointDotRadius: 6,
+        pointDotStrokeWidth: 2,
+        datasetStrokeWidth: 3,
+        scaleShowVerticalLines: false,
+        scaleGridLineWidth: 2,
+        scaleShowGridLines: true,
+        scaleGridLineColor: "rgba(225, 255, 255, 0.02)",
+        scaleOverride: true,
+        scaleSteps: 9,
+        scaleStepWidth: 20,
+        scaleStartValue: 0,
+
+        responsive: true
+
+    });
+
+    //Credit Sales
+    var participantCount = new ProgressBar.Circle('#participantCount', {
+        color: '#e81760',
+        strokeWidth: 3,
+        trailWidth: 3,
+        duration: 1500,
+        text: {
+            value: '0%'
+        },
+        step: function (state, bar) {
+            bar.setText("100%");
+        }
+    });
+    var totalPointCount = new ProgressBar.Circle('#totalPointCount', {
+        color: '#e88e3c',
+        strokeWidth: 3,
+        trailWidth: 3,
+        duration: 1500,
+        text: {
+            value: '0%'
+        },
+        step: function (state, bar) {
+            bar.setText("100%");
+        }
+    });
+    var totalEventCount = new ProgressBar.Circle('#totalEventCount', {
+        color: '#2bab51',
+        strokeWidth: 3,
+        trailWidth: 3,
+        duration: 1500,
+        text: {
+            value: '0%'
+        },
+        step: function (state, bar) {
+            bar.setText("100%");
+        }
+    });
+    participantCount.animate(1);
+    totalPointCount.animate(1);
+    totalEventCount.animate(1);
+</script>
+
+</body>
+
+</html>
