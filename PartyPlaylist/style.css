@@ -1,0 +1,48 @@
+.audio-player{
+    width: 70%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #574b90;
+    flex-direction: row;
+    margin: auto;
+}
+body{
+    background-color: #303a52;
+}
+.single-audio-image{
+    padding: 10px;
+}
+.single-audio-image>img{
+    text-align: center;
+    height: 300px;
+    width: 100%;
+
+}
+.single-audio-player{
+    color: #fc85ae;
+    margin: 2%;
+}
+.single-audio-player>audio{
+    outline: none;
+    width: 100%!important;
+}
+.audio-player>div{
+    width: 50%;
+}
+.audio-list{
+    background-color: #9e579d;
+    height: 100%;
+    margin: 5px;
+}
+.single-audio{
+    text-align: center;
+}
+.head{
+    text-align: center;
+    color: #fc85ae;
+}
+.s{
+    color: white;
+    text-align: center;
+}

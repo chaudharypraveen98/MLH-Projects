@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="head"><h1>Party Playlist</h1></div>
+<div class="audio-player">
+    <div class="single-audio">
+        <div class="single-audio-image">
+            <img src="ed.png">
+        </div>
+        <div class="single-audio-player">
+            <audio id="player" controls>
+                <source src="audio.mp3" type="audio/mp3">
+                <source src="https://files1.mp3slash.xyz/stream/cfc098d7564c384e7794fc87ec9045cd" type="audio/mp3">
+            </audio>
+            <ul id="playlist">
+                <li class="selected" data-ogg="mp3.mp3">Call To Arms</li>
+                <li data-ogg="mp3.mp3">Skinhead Problems</li>
+                <li data-ogg="mp3.mp3">Kill The Bill</li>
+            </ul>
+
+            <button id="stop">Play/Pause</button>
+            <button id="next" onclick="playNext()" >Next</button>
+            <button id="previous" onclick="playPrevious()">Previous</button>
+        </div>
+    </div>
+    <div class="audio-list">
+        <h3 class="s">Songs list</h3>
+        <li>‘You’ve Lost That Lovin’ Feeling’</li>
+        <li>‘You’ve Lost That Lovin’ Feeling’</li>
+        <li>‘You’ve Lost That Lovin’ Feeling’</li>
+        <li>‘You’ve Lost That Lovin’ Feeling’</li>
+        <li>‘You’ve Lost That Lovin’ Feeling’</li>
+        <li>‘You’ve Lost That Lovin’ Feeling’</li>
+        <li>‘You’ve Lost That Lovin’ Feeling’</li>
+
+    </div>
+</div>
+<script>
+    var _player = document.getElementById("player"),
+        _playlist = document.getElementById("playlist"),
+        _stop = document.getElementById("stop");
+
+    // functions
+    function playlistItemClick(clickedElement) {
+        var selected = _playlist.querySelector(".selected");
+        if (selected) {
+            selected.classList.remove("selected");
+        }
+        clickedElement.classList.add("selected");
+
+        _player.src = clickedElement.getAttribute("data-ogg");
+        _player.play();
+    }
+
+    function playNext() {
+        var selected = _playlist.querySelector("li.selected");
+        if (selected && selected.nextElementSibling) {
+            playlistItemClick(selected.nextElementSibling);
+        }
+    }
+
+    function playPrevious() {
+        var selected = _playlist.querySelector("li.selected");
+        if (selected && selected.previousElementSibling) {
+            playlistItemClick(selected.previousElementSibling);
+        }
+    }
+
+    // event listeners
+    _stop.addEventListener("click", function () {
+        if (_player.paused) {
+            _player.play();
+        } else {
+            _player.pause();
+        }
+    });
+
+    _player.addEventListener("ended", playNext);
+    _playlist.addEventListener("click", function (e) {
+        if (e.target && e.target.nodeName === "LI") {
+            playlistItemClick(e.target);
+        }
+    });
+</script>
+</body>
+</html>
